@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RxTypeahead</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="../../node_modules/systemjs/dist/system.js"></script>
+    <script src="../../node_modules/typescript/lib/typescript.js"></script>
+
+    <script>
+        System.config({
+            defaultJSExtensions: true,
+            transpiler: 'typescript', 
+            typescriptOptions: { },
+            map: {
+                'rxjs': '../../../node_modules/rxjs-es'
+            }
+        });
+        System.import('index')
+            .then(null, console.error.bind(console));
+    </script>
+</head>
+
+<body>
+    <h1>RxTypeahead!</h1>
+
+    <label for="typeahead">Find a scientist:</label>
+    <input type="text" id="typeahead" autofocus>
+    <ul id="results"></ul>
+</body>
+
+</html>
